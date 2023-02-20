@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>主页</title>
+    <style type="text/css">
+        body{
+            margin:0;
+        }
+        .logo{
+            float:left;
+            padding-left:80px;
+        }
+        .webname{
+            float:left;
+            text-align: center;
+            vertical-align: center;
+            padding:20px 10px;
+            color:white;
+            font-weight: bolder;
+            font-size: larger;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding-right:100px;
+            overflow: hidden; /*把li元素嵌入到ul内部*/
+            background-color: #333;
+        }
+
+        li {
+            float: right;
+        }
+
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 22px 30px;
+            text-decoration: none;
+        }
+
+        li a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: rgb(13, 12, 12);
+        }
+
+        li.dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="logo"><img src="img/logo.png"></li>
+        <li class="webname">罕见病小灵通</li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">助力无罕之路</a>
+            <div class="dropdown-content">
+                <a href="#">医保政策</a>
+                <a href="#">救助基金</a>
+            </div>
+        </li>
+        <li><a href="#data">数据解密</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">走近罕见病</a>
+            <div class="dropdown-content">
+                <a href="#">发展历程</a>
+                <a href="#">图谱</a>
+            </div>
+        </li>
+        <li><a class="active" href="#home">主页</a></li>
+    </ul>
+
+    <div><img src="img/navpic1.jpg" width="100%"/></div>
+
+    <!--vue写一个图片轮播组件-->
+
+</body>
+
+</html>
