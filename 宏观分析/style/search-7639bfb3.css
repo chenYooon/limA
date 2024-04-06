@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+.search-page[data-v-f1b7160d] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 110;
+    background-color: #fff
+}
+
+.search-page-wrap[data-v-f1b7160d] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    background-color: #fff;
+    z-index: 111
+}
+
+.search-page-wrap[data-v-f1b7160d] .van-search {
+    padding: 10px 5px 4px 13px
+}
+
+.search-page-wrap[data-v-f1b7160d] .van-search__action {
+    font-size: 17px;
+    padding: 0 9px 0 14px;
+    color: #333
+}
+
+.search-page-wrap[data-v-f1b7160d] .van-field__left-icon .van-icon {
+    font-size: 1.4rem
+}
+
+.search-page-wrap[data-v-f1b7160d] .van-field__clear {
+    font-size: 14px;
+    color: #bbb
+}
+
+.thought[data-v-f1b7160d] {
+    display: block;
+    background-color: #fff;
+    width: 100%
+}
+
+.thought ul[data-v-f1b7160d] {
+    padding: 0 14px
+}
+
+.thought li[data-v-f1b7160d] {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    color: #333
+}
+
+.thought li .suggest-query[data-v-f1b7160d] {
+    font-size: 16px;
+    color: #151515;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-grow: 1;
+    flex-shrink: 1
+}
+
+.history[data-v-f1b7160d] {
+    display: block;
+    background-color: #fff;
+    width: 100%
+}
+
+.history li[data-v-f1b7160d] {
+    padding-left: 9px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    color: #333
+}
+
+.history li .suggest-query[data-v-f1b7160d] {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-grow: 1;
+    flex-shrink: 1
+}
+
+.history li .clear[data-v-f1b7160d] {
+    padding: 0 17px 0 10px;
+    height: 4.6rem;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #939393
+}
+
+.history .history_btn[data-v-f1b7160d] {
+    line-height: 21px;
+    font-size: 15px;
+    color: #939390;
+    text-align: center;
+    padding: 5px 0 14px
+}
+
+.thought .dot[data-v-f1b7160d] {
+    width: 24px;
+    height: 24px;
+    background-image: url(https://simg.s.weibo.com/imgtool/20240108_seek_2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+    flex-shrink: 0;
+    flex-grow: 0
+}
+
+.thought .dot2[data-v-f1b7160d] {
+    width: 24px;
+    height: 24px;
+    background-image: url(https://simg.s.weibo.com/imgtool/20240108_clock_1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+    flex-shrink: 0;
+    flex-grow: 0
+}
+
+.history .dot[data-v-f1b7160d] {
+    height: 24px;
+    width: 24px;
+    background-image: url(https://simg.s.weibo.com/imgtool/20240108_clock_1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 4px
+}
+
+.history .remove[data-v-f1b7160d] {
+    height: 1.2rem;
+    width: 1.2rem;
+    background-image: url(https://simg.s.weibo.com/20211202_%E5%88%A0%E9%99%A4.png);
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+.border-bottom-1px[data-v-f1b7160d] {
+    position: relative
+}
+
+.border-bottom-1px[data-v-f1b7160d]:after {
+    background-color: #e6e6e6
+}
+
+.border-bottom-1px[data-v-f1b7160d]:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    transform-origin: 0 0
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+
+    .border-bottom-1px[data-v-f1b7160d]:after,
+    .border-top-1px[data-v-f1b7160d]:after {
+        transform: scaleY(.5)
+    }
+
+    .border-left-1px[data-v-f1b7160d]:after,
+    .border-right-1px[data-v-f1b7160d]:after {
+        transform: scaleX(.5)
+    }
+
+    .border-1px[data-v-f1b7160d]:after {
+        width: 200%;
+        height: 200%;
+        transform: scale(.5);
+        transform-origin: 0 0
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3) {
+
+    .border-bottom-1px[data-v-f1b7160d]:after,
+    .border-top-1px[data-v-f1b7160d]:after {
+        transform: scaleY(.333)
+    }
+
+    .border-left-1px[data-v-f1b7160d]:after,
+    .border-right-1px[data-v-f1b7160d]:after {
+        transform: scaleX(.333)
+    }
+
+    .border-1px[data-v-f1b7160d]:after {
+        width: 300%;
+        height: 300%;
+        transform: scale(.333);
+        transform-origin: 0 0
+    }
+}
+
+[data-v-f1b7160d] .van-search__content {
+    background: rgba(242, 242, 242, .9)
+}
+
+[data-v-f1b7160d] .van-icon__image {
+    width: 16px;
+    height: 16px
+}
+
+[data-v-f1b7160d] .van-search__field {
+    height: 36px
+}
+
+[data-v-f1b7160d] .van-icon-clear {
+    font-size: 16px;
+    background: url(https://simg.s.weibo.com/imgtool/20240116_close%403x.png) no-repeat center;
+    background-size: 16px 16px;
+    margin-right: 4px
+}
+
+[data-v-f1b7160d] .van-icon-clear:before {
+    content: ""
+}
