@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>要闻挖掘</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="./css/adminlte.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+
+  <style>
+    body {
+      background-color: rgb(105, 152, 170);
+    }
+
+    /* 隐藏侧边栏 */
+    .main-sidebar {
+      display: none;
+    }
+
+    nav {
+      margin-top: 10px;
+      margin-left: 100px !important;
+      margin-right: 100px !important;
+      border-radius: 5px;
+      /* background-color:blue; */
+    }
+
+    nav li a {
+      top: -2px;
+      font-size: 14px;
+    }
+
+    /* 如果你想要调整主内容区域的宽度，可以使用以下样式 */
+    .content-wrapper {
+      margin-left: 100px !important;
+      /* 设置内容区左边距为0，使得内容区直接填充整个屏幕 */
+      margin-right: 100px !important;
+    }
+  </style>
+  <script>
+    // $.ajax({
+    //   url: 'Ajax/search.php',
+    //   type: 'GET',
+    //   success: function (data) {
+    //     // 将新的HTML内容插入到当前页面的一个元素中
+    //     $('#topicEcho').html(data);
+    //   }
+    // });
+  </script>
+  <script>
+    function showHint(str) {
+      if (str.length == 0) {
+        document.getElementById("suggestions").innerHTML = "";
+        return;
+      }
+      if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+      }
+      else {
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          document.getElementById("suggestions").innerHTML = xmlhttp.responseText;
+        }
+      }
+      xmlhttp.open("GET", "Ajax/livesearch.php?q=" + str, true);
+      xmlhttp.send();
+    }
+  </script>
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fa fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="律云通晓.html" class="nav-link">首页</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="话题一览.html" class="nav-link">话题一览</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="要闻挖掘.html" class="nav-link">要闻挖掘</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="dashboard.html" class="nav-link">大模型问答</a>
+        </li>
+      </ul>
+
+      <form class="form-inline ml-3" method="GET" action="Ajax/search.php">
+        <div class="input-group input-group-sm">
+          <!-- <input class="form-control form-control-navbar" type="search" placeholder="话题搜索" aria-label="Search"> -->
+          <input class="search" id="txt1" type="search" size="20" placeholder="话题搜索" name="q"
+            onkeyup="showHint(this.value)" list="suggestions"
+            style="background-color:rgb(242, 244, 246); border: 0px; font-size: 14px; padding-left: 10px;">
+          <datalist id="suggestions"></datalist>
+          <div class="input-group-append">
+            <button class="btn btn-navbar" type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <h1>
+        <a href="index.html" class="brand-link">
+          <img src="./upload/avatar.jpg" class="brand-image img-circle elevation-3">
+          <span class="brand-text font-weight-light">ZengZK's Blog</span>
+        </a>
+      </h1>
+
+
+      <div class="sidebar">
+
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-header">读万卷书</li>
+            <li class="nav-item">
+              <a href="index.html" class="nav-link active">
+                <i class="fa fa-home nav-icon"></i>
+                <p>首页</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="category.html" class="nav-link">
+                <i class="fa fa-bookmark nav-icon"></i>
+                <p>分类</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="tag.html" class="nav-link">
+                <i class="fa fa-tags nav-icon"></i>
+                <p>标签</p>
+              </a>
+            </li>
+
+            <li class="nav-header">行万里路</li>
+            <li class="nav-item">
+              <a href="archive.html" class="nav-link">
+                <i class="fa fa-archive nav-icon"></i>
+                <p>归档</p>
+              </a>
+            </li>
+            <li class="nav-header">点滴记录</li>
+            <li class="nav-item">
+              <a href="guestbook.html" class="nav-link">
+                <i class="fa fa-comments nav-icon"></i>
+                <p>留言</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper mt-3">
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <!-- 下面标签对应博客正文，可设置颜色什么的 -->
+              <div class="card card-teal card-outline mb-5">
+                <div class="card-header">
+                  <div style="color:rgb(46, 160, 122);float:left">#河北邯郸通报男生被同学灌开水#</div>
+                  <a href="宏观分析/宏观分析_河北邯郸.html"><span class="badge badge-success"
+                      style="float:right;margin-top: 5px;">宏观分析</span></a>
+                </div><!-- /.card-header -->
+                <div class="card-body bg-hover-gray" id="WeiBoDisplay1">
+                  <!-- <div class="mb-1">
+                    <a href="detail.html" target="_blank" class="text-lg text-bold link-title">判十年</a>
+                    <span class="badge badge-info">置顶微博</span>
+                  </div> -->
+                  <a href="微博分析.html" style="color: black;">
+                    <p id="WeiBoText1">【#河北邯郸通报男生被同学灌开水#：被烫伤学生治愈出院 】<br>
+                      #被同学灌开水男生已治愈出院# <br>
+                      据河北邯郸永年区教体局通报：日前，网传“永年区第五中学发生烫伤事”，实际情况为：2024年3月27日晚，永年区第五中学七年级学生刘某桐与赵某浩打闹中，刘某桐与舍友郝某涵用水将赵某浩烫伤。
+                      学校老师发现后，送赵某浩就医，经诊疗，赵某浩面部、胸部轻度烫伤，并已于4月5日治愈出院。<br>
+                      学校已对相关学生进行处理，并加强教育，杜绝类似事情发生。​​​</p>
+                  </a>
+                  <p>
+                    <span class="text-sm" id="WeiBoUser1"><i
+                        class="far fa-user mr-1"></i>5342220662</span>&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;
+                    <span class="text-sm mr-2" id="WeiBoTime1"><i class="far fa-calendar-alt mr-1"></i>2024-04-06
+                      11:50:39</span>
+                  </p>
+                  <p class="mb-0">
+                    <button class="btn btn-outline-primary btn-xs" id="WeiBoTrans1">转发数2594</button>
+                    <button class="btn btn-outline-primary btn-xs" id="WeiBoLike1">点赞数6887</button>
+                    <button class="btn btn-outline-primary btn-xs" id="WeiBoCom1">评论数12万</button>
+                  </p>
+                </div><!-- /.card-body -->
+                <hr class="m-0">
+
+                <div class="card-body bg-hover-gray" id="WeiBoDisplay2">
+                  <!-- <div class="mb-1">
+                    <a href="detail.html" target="_blank" class="text-lg text-bold link-title">判十年</a>
+                    <span class="badge badge-info">热门微博</span>
+                  </div> -->
+                  <p id="WeiBoText2"> ​【拒绝校园霸凌！你可以被理解、被拥抱、被在乎】<br>
+                    以众欺寡、以强凌弱……它不仅伤害了同学们的身心，严重时还会威胁人身安全。面对校园暴力，被欺凌者要勇敢地站出来与其作斗争，不做“沉默的羔羊”。
+                    ​</p>
+                  <p>
+                    <span class="text-sm" id="WeiBoUser2"><i
+                        class="far fa-user mr-1"></i>1093928110</span>&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;
+                    <span class="text-sm mr-2" id="WeiBoTime2"><i class="far fa-calendar-alt mr-1"></i>2024-04-06
+                      16:20:13</span>
+                  </p>
+                  <p class="mb-0">
+                    <button class="btn btn-outline-primary btn-xs" id="WeiBoTrans2">转发数24</button>
+                    <button class="btn btn-outline-primary btn-xs" id="WeiBoLike2">点赞数26</button>
+                    <button class="btn btn-outline-primary btn-xs" id="WeiBoCom2">评论数266</button>
+                  </p>
+                </div><!-- /.card-body -->
+                <hr class="m-0">
+
+                <div class="card-body bg-hover-gray" id="WeiBoDisplay3">
+                  <!-- <div class="mb-1">
+                    <a href="detail.html" target="_blank" class="text-lg text-bold link-title">判十年</a>
+                    <span class="badge badge-info">热门微博</span>
+                  </div> -->
+                  <p id="WeiBoText3">
+                    #河北邯郸通报男生被同学灌开水#<br>
+                    看视频中受伤同学的嘴巴状态，嘴部明显烫伤，而且是精准烫伤状态，“被灌开水”的可能性在我看来很高，这是典型的校园霸凌，并不是简单的“打闹中被烫伤”。<br>
+                    这种表现的校园霸凌，我认为属于“严重不良行为”，按照现有规定，可以对施害者及其法定监护人进行训诫、严厉批评，同时受害者还可以提起民事诉讼要求赔偿。<br>
+                    学校对于这种施暴的学生应该予以开除。
+                  </p>
+                  <p>
+                    <span class="text-sm" id="WeiBoUser3"><i
+                        class="far fa-user mr-1"></i>1082928110</span>&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;
+                    <span class="text-sm mr-2" id="WeiBoTime3"><i class="far fa-calendar-alt mr-1"></i>2024-04-06
+                      16:13:13</span>
+                  </p>
+                  <p class="mb-0">
+                    <button class="btn btn-outline-primary btn-xs" id="WeiBoTrans3">转发数63</button>
+                    <button class="btn btn-outline-primary btn-xs" id="WeiBoLike3">点赞数74</button>
+                    <button class="btn btn-outline-primary btn-xs" id="WeiBoCom3">评论数676</button>
+                  </p>
+                </div><!-- /.card-body -->
+                <hr class="m-0">
+
+
+                ​
+                <div class="card-body bg-hover-gray" id="WeiBoDisplay4">
+                  <p id="WeiBoText3">关于校园霸凌事件我想说<br>
+                    此事件已经严重影响到@困困宝aa 的正常生活<br>
+                    已经构成了侵犯他人肖像权与名誉权 言语霸凌已经算校园欺凌的一种了<br>
+                    抵制校园霸凌！<br>
+                    不能袖手旁观！#校园霸凌# <br>
+                    看见的宝宝转转！
+                    ​</p>
+                  <p>
+                    <span class="text-sm" id="WeiBoUser4"><i
+                        class="far fa-user mr-1"></i>8082928110</span>&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;
+                    <span class="text-sm mr-2" id="WeiBoTime4"><i class="far fa-calendar-alt mr-1"></i>2024-04-06
+                      16:13:13</span>
+                  </p>
+                  <p class="mb-0">
+                    <button class="btn btn-outline-primary btn-xs" id="WeiBoTrans4">转发数588</button>
+                    <button class="btn btn-outline-primary btn-xs" id="WeiBoLike4">点赞数573</button>
+                    <button class="btn btn-outline-primary btn-xs" id="WeiBoCom4">评论数677</button>
+                  </p>
+                </div><!-- /.card-body -->
+                <hr class="m-0">
+
+
+
+                <!-- <div class="card-body bg-hover-gray">
+                  <div class="mb-1">
+                    <a href="detail.html" target="_blank" class="text-lg text-bold link-title">我是一只猫，快乐的星猫，一起喵喵喵</a>
+                    <span class="badge badge-info">原创</span>
+                  </div>
+                  <p>
+                    Lorem ipsum represents a long-held tradition for designers,
+                    typographers and the like. Some people hate it and argue for
+                    its demise, but others ignore the hate as they create awesome
+                    tools to help create filler text for everyone from bacon lovers
+                    to Charlie Sheen fans.
+                  </p>
+                  <p>
+                    <span class="text-sm mr-2"><i class="far fa-calendar-alt mr-1"></i> 2019-01-01 10:08</span>
+                    <span class="text-sm"><i class="far fa-eye mr-1"></i> 10</span>
+                  </p>
+                  <p class="mb-0">
+                    <button class="btn btn-outline-primary btn-xs">分类</button>
+                    <button class="btn btn-outline-primary btn-xs">标签1</button>
+                    <button class="btn btn-outline-primary btn-xs">标签2</button>
+                  </p>
+                </div>
+                <hr class="m-0"> -->
+
+
+                <div class="card-footer clearfix">
+                  <ul class="pagination m-0 float-right">
+                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
+                    <li class="page-item active"><a class="page-link" href="要闻挖掘.html">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+                  </ul>
+                </div><!-- /.card-footer -->
+              </div>
+              <!-- /.nav-tabs-custom -->
+            </div>
+            <!-- /.col -->
+
+            <div class="col-md-4">
+              <!-- Profile Image -->
+              <div class="card widget-user sticky-top">
+                <!-- Add the bg color to the header using any of the bg-* classes -->
+                <div class="widget-user-header bg-info">
+                  <!-- <h3 class="widget-user-username">律云</h3> -->
+                  <h5 class="widget-user-desc">律云通晓<br>介绍</h5>
+                </div>
+                <div class="widget-user-image">
+                  <img class="img-circle elevation-2" src="./image/图片1.png" alt="User Avatar">
+                </div>
+                <div class="card-body pt-5">
+                  <!-- <p class="text-muted">
+                    一个Java初学者，一个热爱编程的人，希望能在0与1的世界与您相遇，结伴而行！
+                  </p> -->
+
+                  <ul class="list-group list-group-unbordered">
+                    <li class="list-group-item">
+                      <strong><i class="far fa-bookmark mr-2"></i>简单介绍</strong>
+                      <p>律云通晓是一个面向大众、驻足当前热点的法律科普网站。旨在通过分析社交数据和时事热点，来迎合大众需求。</p>
+                    </li>
+
+                    <li class="list-group-item">
+                      <strong><i class="fa fa-pencil-alt mr-2"></i>大模型助力</strong>
+                      <p>
+                        - 基于法律条文判例知识库<br>
+                        - 检索增强生成回答</p>
+                    </li>
+
+                    <li class="list-group-item">
+                      <strong><i class="fa fa-lightbulb mr-2"></i>网站特点</strong>
+                      <div class="text-muted">
+                        <span class="badge badge-success">时事热点</span>
+                        <span class="badge badge-success">社交数据</span>
+                        <span class="badge badge-success">法律科普</span><br>
+                        <span class="badge badge-warning">文本挖掘</span>
+                        <span class="badge badge-warning">大模型分析</span>
+                      </div>
+                    </li>
+
+
+                    <!-- <li class="list-group-item">
+                      <strong><i class="fa fa-lightbulb mr-2"></i>网站特点</strong>
+                      <div class="text-muted">
+                        <span class="badge badge-warning">编程</span>
+                        <span class="badge badge-warning">学习</span>
+                      </div>
+                    </li> -->
+
+                    <li class="list-group-item text-center">
+                      <button class="btn btn-success btn-sm rounded-circle" data-toggle="tooltip" data-placement="top"
+                        title="939234206">
+                        <i class="fab fa-weibo"></i>
+                      </button>
+                      <button class="btn btn-success btn-sm rounded-circle" data-toggle="tooltip" data-placement="top"
+                        title="939234206">
+                        <i class="fab fa-github"></i>
+                      </button>
+                      <!-- <button class="btn btn-success btn-sm rounded-circle" data-toggle="tooltip" data-placement="top"
+                        title="939234206">
+                        <i class="fab fa-weixin"></i>
+                      </button> -->
+                      <!-- <a href="http://www.baidu.com" target="_blank" class="btn btn-success btn-sm rounded-circle"
+                        data-toggle="tooltip" data-placement="top" title="github">
+                        <i class="fab fa-github text-white"></i>
+                      </a> -->
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.col -->
+          <!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <!-- <footer class="main-footer">
+      <p class="text-center mb-1">
+        Copyright © 2020 ZengZK Designed by ZengZK Powered by AdminLTE
+      </p>
+      <p class="text-center">
+        <a href="">粤ICP备20040058号</a>
+      </p>
+    </footer> -->
+    <div class="site-footer">
+      <p style="text-align: center; font-family:'STZhongsong'; margin-top: 20px;">
+        Copyright &copy; 2024.律云通晓项目组 All rights reserved.
+      </p>
+    </div>
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- jQuery -->
+  <script src="./plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="./js/adminlte.min.js"></script>
+  <script src="./js/tooltip.init.js"></script>
+
+</body>
+
+</html>

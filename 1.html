@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PHP搜索下拉框</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <input type="text" id="searchInput" placeholder="输入搜索关键词">
+    <select id="yewuyuan" class="input" style="background-color:#FFFFFF;width:120px;"></select>
+
+    <script>
+        // 绑定输入框事件
+        $("#searchInput").on("keyup", function() {
+            var keyword = $(this).val();
+
+            // 发送AJAX请求到服务器
+            $.ajax({
+                url: "livesearch.php", // 您的服务器端处理脚本
+                method: "POST",
+                data: { keyword: keyword },
+                success: function(response) {
+                    // 更新下拉框选项
+                    $("#yewuyuan").empty();
+                    $.each(response, function(index, option) {
+                        $("#yewuyuan").append("<option value='" + option.value + "'>" + option.label + "</option>");
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
