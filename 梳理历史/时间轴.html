@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .part1{
+            /* height:500px; */
+        }
+        .part1 .timeline {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: auto;
+            position: relative;
+            white-space: nowrap;
+            width: 100%;
+            height:130px;
+        }
+
+        .part1 .timeline::before {
+            content: '';
+            position: absolute;
+            top: calc(50% - 15px);
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ddd;
+        }
+
+        .part1 .timeline li {
+            display: inline;
+            position: relative;
+        }
+
+        .part1 .timeline a {
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+            position: relative;
+            z-index: 1;
+            margin-top: 15px;
+        }
+
+        .part1 .timeline a::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            background-color: white;
+            z-index: 2;
+        }
+
+        .part1 .timeline a:hover {
+            color: #bbb;
+        }
+
+        .part1 .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 100px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .part1 .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .part1 .dropdown-content p {
+            text-align: center;
+        }
+
+        .part1 .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+    </style>
+    <script>
+        function showDropdown(event) {
+            var dropdown = event.currentTarget.getElementsByClassName("dropdown-content")[0];
+            dropdown.style.display = "block";
+        }
+
+        function hideDropdown(event) {
+            var dropdown = event.currentTarget.getElementsByClassName("dropdown-content")[0];
+            dropdown.style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+<div class="part1">
+    <ul class="timeline">
+        <li onmouseover="showDropdown(event)" onmouseout="hideDropdown(event)"><a href="初创时期.html">初创时期</a>
+            <div class="dropdown-content">
+                <p>夏商周</p>
+            </div>
+        </li>
+        <!-- 为其他朝代添加类似的下拉框 -->
+        <li onmouseover="showDropdown(event)" onmouseout="hideDropdown(event)"><a href="发展期.html">发展期</a>
+            <div class="dropdown-content">
+                <p>春秋战国——三国两晋南北朝</p>
+            </div>
+        </li>
+        <li onmouseover="showDropdown(event)" onmouseout="hideDropdown(event)"><a href="发达时期.html">发达时期</a>
+            <div class="dropdown-content">
+                <p>隋——清</p>
+            </div>
+        </li>
+        <li onmouseover="showDropdown(event)" onmouseout="hideDropdown(event)"><a href="转型期.html">转型期</a>
+            <div class="dropdown-content">
+                <p>清末——民国</p>
+            </div>
+        </li>
+        <li onmouseover="showDropdown(event)" onmouseout="hideDropdown(event)"><a href="新中国.html">新中国</a>
+            <div class="dropdown-content">
+                <p>1949年及以后</p>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+
+</html>
