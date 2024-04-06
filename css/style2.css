@@ -1,0 +1,47 @@
+.logo img {
+  width: 50px;
+}
+.hero .slides img{
+  height: 608px;
+}
+.owl-3-slider .owl-item .img-fluid {
+  height: 511.8px;
+}
+.priceList img {
+  height: 340.17px;
+}
+.priceList  .media-1 h3 a{
+  font-size: 14px;
+}
+.testimonial .img-wrap img {
+  height: 70px;
+}
+.untree_co-section img {
+  height: 348px;
+}
+.aboutCural img {
+  height: 380px;
+}
+.aboutPeople img {
+  width: 255px;
+  height: 255px;
+}
+.untree_co-section p{
+  font-size: 12px;
+  line-height: 23px;
+}
+.aboutSh img{
+  height: 349px;
+}
+.hero.hero-inner.serverBanner{
+  background: url('../image/banner1.jpg') no-repeat;
+  background-size: 100% 100%;
+}
+.hero.hero-inner.aboutBanner{
+  background: url('../image/banner3.jpg') no-repeat;
+  background-size: 100% 100%;
+}
+.hero.hero-inner.contactBanner{
+  background: url('../image/banner2.jpg') no-repeat;
+  background-size: 100% 100%;
+}
